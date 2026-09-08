@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukmu Coffee de Especialidad — Santiago</title>
+
+<!-- ============================================================
+     PROTOTIPO BETA — MUKMU COFFEE DE ESPECIALIDAD
+     Datos verificados en vivo en Google Maps e Instagram el 08-09-2026:
+     dirección, horario, teléfono, rating, reseñas, mapa/CID real
+     (CID verificado en vivo: 0x9662c50b1de3fc53:0xc23378e7bce66bbd — el
+     Place ID entregado por Apify no se usó tal cual sin confirmar).
+     PENDIENTE / NUNCA INVENTADO:
+     - Teléfono +56 9 9733 8017 es un número móvil real (registrado en
+       Maps), pero NO se confirmó que tenga WhatsApp activo — se usa
+       como botón de llamada, no como wa.me, hasta confirmar.
+     - Sin delivery app confirmada (Rappi/Uber Eats/PedidosYa): Maps
+       muestra "Pedir en línea" pero no especifica a través de qué
+       plataforma — no se agregó ningún botón de delivery de terceros.
+     - Sin programa de fidelización encontrado.
+     - Precios de café: sacados de una foto REAL de la pizarra del local
+       subida por una clienta en Google Maps, pero fechada feb-2023 —
+       se muestran como referencia con la fecha visible, no como tarifa
+       2026 confirmada. La pastelería y los sándwiches no tienen ningún
+       precio publicado en ningún canal — se muestran "Consultar".
+     - Pequeña discrepancia de horario entre Google Maps (domingo
+       10:00-19:00) e Instagram (bio dice "Do-Fer 09:00-18:00") — se usó
+       el horario de Google Maps por ser el más reciente/verificado en
+       vivo, se deja esta nota por transparencia.
+     Fotos reales: logo + 3 fotos, todas sacadas del Instagram real
+     @mukmu_coffee (ninguna de otro local).
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="loader"><img src="fotos/logo.jpg" alt=""></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" data-tab="inicio">
+      <img class="logo-mark" src="fotos/logo.jpg" alt="Logo Mukmu Coffee">
+      <strong>Mukmu <span>Coffee</span></strong>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><button class="nav-link active" data-tab="inicio">Inicio</button></li>
+      <li><button class="nav-link" data-tab="nosotros">Nosotros</button></li>
+      <li><button class="nav-link" data-tab="carta">Carta</button></li>
+      <li><button class="nav-link" data-tab="resenas">Reseñas</button></li>
+      <li><button class="nav-link" data-tab="visitanos">Visítanos</button></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn">Pedido <span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+<section id="tab-inicio" class="tab-panel active" data-tab-panel="inicio">
+<section class="hero" id="top">
+  <div class="bg-photo">
+    <img src="fotos/interior-mokaccino.jpg" alt="Interior de Mukmu Coffee, mesas con mokaccino y croissant">
+  </div>
+  <img class="logo-mark hero-mark" src="fotos/logo.jpg" alt="Logo Mukmu Coffee">
+  <span class="eyebrow reveal">Café de especialidad · Barrio universitario, Santiago Centro</span>
+  <h1 class="reveal">Café de especialidad para <em>estudiar, trabajar y tomarte tu tiempo</em></h1>
+  <p class="tagline reveal">100% arábica, tueste propio, opciones veganas y sin gluten, y un rincón laptop-friendly a pasos de la Universidad Santo Tomás y la UDLA. Aceptamos Junaeb, Edenred, Pluxee y Ámipass.</p>
+  <div class="hero-info reveal">
+    <div class="hero-pill"><span class="status-dot" id="statusDot"></span> <span id="statusText">Consultando horario…</span></div>
+    <div class="hero-pill">★ <strong>4.9</strong> (338 opiniones)</div>
+    <div class="hero-pill"><strong>Abdón Cifuentes 67</strong>, Local B</div>
+  </div>
+  <div class="cta-row reveal">
+    <button class="btn btn-solid" data-tab="carta">Ver la carta</button>
+    <button class="btn btn-outline" data-tab="visitanos">Cómo llegar</button>
+  </div>
+</section>
+</section>
+
+<section id="tab-nosotros" class="tab-panel" data-tab-panel="nosotros">
+<section id="nosotros">
+  <div class="wrap sobre">
+    <span class="eyebrow reveal">quiénes somos</span>
+    <h2 class="reveal">Café de especialidad hecho por una mujer emprendedora</h2>
+    <p class="reveal">Mukmu Coffee es un café de especialidad de barrio, a pasos de la Universidad Santo Tomás, la UDLA y la UDP — el tipo de lugar donde llegas a estudiar con el computador y te quedas más de la cuenta porque el café está bueno y el ambiente es tranquilo. En Google Maps el negocio está identificado como liderado por una mujer empresaria, y es un espacio amigable con la comunidad LGBTQ+.</p>
+    <p class="reveal">Trabajan café 100% arábica con perfiles de origen colombiano y guatemalteco, con filtrados propios (Kalita, entre otros) además de la barra de espresso clásica. La pastelería suma opciones veganas, sin gluten y sin azúcar — croissants, rollos de canela, cheesecake de maracuyá, red velvet y canelé, entre otras. Un detalle que se repite en las reseñas reales: el personal responde personalmente cada opinión en Google, agradeciendo a cada cliente por su nombre.</p>
+    <div class="badges-row reveal">
+      <span class="badge badge-a">Café 100% arábica</span>
+      <span class="badge badge-a">Laptop friendly</span>
+      <span class="badge badge-b">Opciones veganas y sin gluten</span>
+      <span class="badge badge-b">Amigable LGBTQ+</span>
+      <span class="badge badge-b">Liderado por una mujer empresaria</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider reveal"><span class="mark">· M ·</span></div>
+
+<section style="background:var(--ink); color:#fff;">
+  <div class="wrap">
+    <div class="section-head dark reveal">
+      <span class="eyebrow">para chusmear</span>
+      <h2>Un café con actitud</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="reveal"><img src="fotos/latte-arte.jpg" alt="Latte art en taza roja junto al frasco de granos Mukmu"><div class="gallery-tag">Nuestro tueste, nuestra taza</div></figure>
+      <figure class="reveal"><img src="fotos/espresso-helado.jpg" alt="Espresso y café helado sobre mesa de madera"><div class="gallery-tag">Caliente o helado</div></figure>
+      <figure class="reveal"><img src="fotos/interior-mokaccino.jpg" alt="Mokaccino y croissant doble queso en el local"><div class="gallery-tag">Mokaccino + Croissant Doble Queso</div></figure>
+    </div>
+  </div>
+</section>
+</section>
+
+<section id="tab-carta" class="tab-panel" data-tab-panel="carta">
+<section id="carta" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">la carta</span>
+      <h2>Nuestra carta</h2>
+    </div>
+    <div class="menu-tabs" id="menuTabs"></div>
+    <div id="menuPanels"></div>
+  </div>
+</section>
+</section>
+
+<section id="tab-resenas" class="tab-panel" data-tab-panel="resenas">
+<section id="resenas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">lo que dicen</span>
+      <h2>338 opiniones en Google · 4.9 / 5</h2>
+    </div>
+    <div class="resenas-grid">
+      <article class="resena-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Fue una muy buena experiencia, nos trataron de forma muy educada y amable, incluso nos esperaron a mi y mi pareja mientras decidíamos qué ordenar, fueron super amistosos, dedicados y las bebidas estaban exquisitas."</p>
+        <footer>
+          <div class="resena-avatar">A</div>
+          <div class="resena-meta"><strong>Alex</strong>Local Guide · hace 4 meses</div>
+        </footer>
+      </article>
+      <article class="resena-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Con un verdadero café de especialidad y una atención excelente. Es ideal para pasar un rato y tomarse el café más rico de la zona."</p>
+        <footer>
+          <div class="resena-avatar">YG</div>
+          <div class="resena-meta"><strong>Yachi Guiral</strong>hace 5 meses</div>
+        </footer>
+      </article>
+      <article class="resena-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"El caballero que nos atendió fue muy amable, aparte de él nos atendió otro joven e igualmente fue muy amable. El ambiente es muy tranquilo, el café y postre estaban ricos y lo mejor es que aceptan Junaeb."</p>
+        <footer>
+          <div class="resena-avatar">CM</div>
+          <div class="resena-meta"><strong>Constanza Muñoz Garrido</strong>Local Guide · hace 5 meses</div>
+        </footer>
+      </article>
+    </div>
+    <div class="cta-row reveal" style="justify-content:center;">
+      <a class="btn btn-solid" href="https://search.google.com/local/writereview?placeid=0x9662c50b1de3fc53:0xc23378e7bce66bbd" target="_blank" rel="noopener">★ Escribir una opinión en Google</a>
+    </div>
+  </div>
+</section>
+</section>
+
+<section id="tab-visitanos" class="tab-panel" data-tab-panel="visitanos">
+<section class="visit" id="visitanos" style="background:linear-gradient(180deg, #241a17, var(--red-dark)); color:#fff;">
+  <div class="wrap visit-grid">
+    <div>
+      <div class="section-head dark reveal" style="text-align:left; margin-bottom:32px;">
+        <span class="eyebrow">te esperamos</span>
+        <h2>Visítanos</h2>
+      </div>
+      <div class="visit-block reveal"><h3>Dirección</h3><p>Abdón Cifuentes 67, Local B, Santiago</p></div>
+      <div class="visit-block reveal">
+        <h3>Horario</h3>
+        <p>Lunes a viernes 8:00 a 20:00h<br>Sábado cerrado<br>Domingo 10:00 a 19:00h</p>
+        <div class="visit-pill"><span class="status-dot" id="statusDot2"></span> <span id="statusText2">Consultando horario…</span></div>
+      </div>
+      <div class="visit-block reveal">
+        <h3>Beneficios aceptados</h3>
+        <p>Junaeb, Edenred, Pluxee y Ámipass (confirmado en Instagram y Google Maps).</p>
+      </div>
+      <div class="visit-block reveal">
+        <h3>Contacto</h3>
+        <div class="contact-links">
+          <!-- PLACEHOLDER: +56 9 9733 8017 es el teléfono móvil real registrado en Google Maps, pero no está confirmado que tenga WhatsApp activo -->
+          <a class="contact-pill" href="tel:+56997338017">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +56 9 9733 8017 (no confirmado WhatsApp)
+          </a>
+          <a class="contact-pill" href="https://instagram.com/mukmu_coffee" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @mukmu_coffee
+          </a>
+        </div>
+      </div>
+      <div class="cta-row reveal" style="justify-content:flex-start;">
+        <a class="btn btn-solid" href="https://www.google.com/maps/dir/?api=1&destination=Abd%C3%B3n+Cifuentes+67,+Santiago&destination_place_id=0x9662c50b1de3fc53:0xc23378e7bce66bbd" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn-outline" style="border-color:rgba(255,255,255,0.5); color:#fff;" href="https://waze.com/ul?q=Abd%C3%B3n%20Cifuentes%2067%2C%20Santiago&navigate=yes" target="_blank" rel="noopener">Ir con Waze</a>
+      </div>
+    </div>
+    <div class="map-frame">
+      <!-- Embed real generado desde la ficha de Google Maps del negocio -->
+      <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0215991366417!2d-70.6658978!3d-33.4487438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c50b1de3fc53%3A0xc23378e7bce66bbd!2sCafeter%C3%ADa%20Mukmu%20Coffee%20de%20Especialidad!5e0!3m2!1ses-419!2scl!4v1788830046964!5m2!1ses-419!2scl" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img class="logo-mark footer-mark" src="fotos/logo.jpg" alt="Logo Mukmu Coffee">
+    <p class="footer-tag">Café de especialidad · Santiago Centro</p>
+    <p class="footer-contact">Abdón Cifuentes 67, Local B · <a href="tel:+56997338017">+56 9 9733 8017</a></p>
+    <div class="footer-badges">
+      <span class="badge badge-b" style="border-color:rgba(255,255,255,0.35); color:#fff; background:rgba(255,255,255,0.08);">100% arábica</span>
+      <span class="badge badge-b" style="border-color:rgba(255,255,255,0.35); color:#fff; background:rgba(255,255,255,0.08);">Vegano y sin gluten</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <a href="https://instagram.com/mukmu_coffee" target="_blank" rel="noopener">@mukmu_coffee</a>
+      <span>·</span>
+      <span>Sitio demo diseñado con cariño</span>
+    </div>
+  </div>
+</footer>
+
+<!-- OVERLAY CARRITO -->
+<div class="overlay" id="cartOverlay">
+  <div class="cart-panel">
+    <button class="close-x" id="cartCloseBtn">&times;</button>
+    <h3>Tu pedido</h3>
+    <div id="cartLines"><p class="cart-empty">Todavía no agregaste nada.</p></div>
+    <div class="cart-total"><span>Total</span><span class="mono" id="cartTotal">A consultar</span></div>
+    <a class="btn btn-solid" style="justify-content:center; margin-top:14px;" id="checkoutBtn" href="tel:+56997338017">Consultar por teléfono</a>
+  </div>
+</div>
+
+<!-- OVERLAY MODAL PRODUCTO -->
+<div class="overlay modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="close-x" id="modalCloseBtn">&times;</button>
+    <div class="modal-photo" id="modalPhoto" style="display:none;"></div>
+    <h3 id="modalName"></h3>
+    <div class="price mono" id="modalPrice"></div>
+    <p class="desc" id="modalDesc"></p>
+    <button class="btn btn-solid" style="width:100%; justify-content:center;" id="modalAddBtn">Agregar a la bolsa</button>
+  </div>
+</div>
+
+<!-- WIDGET FLOTANTE -->
+<div class="float-widget">
+  <a class="float-btn instagram" href="https://instagram.com/mukmu_coffee" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+  <a class="float-btn phone" href="tel:+56997338017" aria-label="Llamar por teléfono">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
