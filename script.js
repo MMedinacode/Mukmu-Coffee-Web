@@ -180,7 +180,7 @@ function openModal(item){
   currentItem = item;
   document.getElementById('modalName').textContent = item.n;
   document.getElementById('modalPrice').textContent = money(item.p);
-  document.getElementById('modalDesc').textContent = item.d || 'Preparado real de la carta de Mukmu Coffee.';
+  document.getElementById('modalDesc').textContent = item.d || 'De nuestra carta.';
   const photoWrap = document.getElementById('modalPhoto');
   if(item.img){
     photoWrap.innerHTML = '';
