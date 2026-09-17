@@ -61,6 +61,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pulido.css">
+
+<!-- ══════════════════════════════════════════════════════════════
+     Datos estructurados (schema.org)
+     ══════════════════════════════════════════════════════════════
+     Esto no se ve en la página: lo lee Google. Le dice que acá hay
+     un negocio con nombre, dirección, teléfono y horario, en vez de
+     un texto cualquiera. Es lo que permite salir como ficha y no
+     sólo como un resultado más.
+
+     Todo lo de abajo ya está publicado en esta misma página. Si un
+     dato no estaba, el campo simplemente no aparece. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Mukmu Coffee de Especialidad",
+  "description": "Mukmu Coffee de Especialidad. Café de especialidad para estudiar, trabajar y tomarte tu tiempo. 4.9★ con 338 opiniones en Google.",
+  "image": "https://mmedinacode.github.io/Mukmu-Coffee-Web/fotos/interior-mokaccino.jpg",
+  "url": "https://mmedinacode.github.io/Mukmu-Coffee-Web/",
+  "telephone": "+56997338017",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Abdón Cifuentes 67, Local B",
+    "addressLocality": "Santiago Centro",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "sameAs": [
+    "https://instagram.com/mukmu_coffee"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -116,7 +149,7 @@
     <span class="eyebrow reveal">quiénes somos</span>
     <h2 class="reveal">Café de especialidad hecho por una mujer emprendedora</h2>
     <p class="reveal">Mukmu Coffee es un café de especialidad de barrio, a pasos de la Universidad Santo Tomás, la UDLA y la UDP — el tipo de lugar donde llegas a estudiar con el computador y te quedas más de la cuenta porque el café está bueno y el ambiente es tranquilo. En Google Maps el negocio está identificado como liderado por una mujer empresaria, y es un espacio amigable con la comunidad LGBTQ+.</p>
-    <p class="reveal">Trabajan café 100% arábica con perfiles de origen colombiano y guatemalteco, con filtrados propios (Kalita, entre otros) además de la barra de espresso clásica. La pastelería suma opciones veganas, sin gluten y sin azúcar — croissants, rollos de canela, cheesecake de maracuyá, red velvet y canelé, entre otras. Un detalle que se repite en las reseñas reales: el personal responde personalmente cada opinión en Google, agradeciendo a cada cliente por su nombre.</p>
+    <p class="reveal">Trabajan café 100% arábica con perfiles de origen colombiano y guatemalteco, con filtrados propios (Kalita, entre otros) además de la barra de espresso clásica. La pastelería suma opciones veganas, sin gluten y sin azúcar — croissants, rollos de canela, cheesecake de maracuyá, red velvet y canelé, entre otras. Un detalle que se repite en las reseñas: el personal responde personalmente cada opinión en Google, agradeciendo a cada cliente por su nombre.</p>
     <div class="badges-row reveal">
       <span class="badge badge-a">Café 100% arábica</span>
       <span class="badge badge-a">Laptop friendly</span>
@@ -300,5 +333,7 @@
 <script>window.REDES={"intro": "Café de especialidad en Santiago centro. Instagram es su canal activo.", "instagram": {"user": "mukmu_coffee", "seguidores": "1.593", "fotos": ["fotos/latte-arte.jpg", "fotos/espresso-helado.jpg", "fotos/interior-mokaccino.jpg"]}, "telefono": {"numero": "+56997338017"}};</script>
 <script src="redes.js"></script>
 <script src="flotantes.js"></script>
+<script src="vida.js"></script>
+<script src="pulido.js"></script>
 </body>
 </html>

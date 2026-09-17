@@ -104,7 +104,7 @@ catKeys.forEach((key, i) => {
     panel.appendChild(wrap);
     const note = document.createElement('p');
     note.className = 'menu-note';
-    note.textContent = 'Precios sacados de una foto real de la pizarra del local (feb-2023) — pueden haber cambiado, confirmar en el local.';
+    note.textContent = 'Los precios se confirman en el local.';
     panel.appendChild(note);
     panelsEl.appendChild(panel);
     return;
